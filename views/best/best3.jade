@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Best No.3
+                | 			
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/youngwol')
+                            img(src='/images/영월_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 영월
+                    | 				
+                    li
+                        a(href='/city/youngju')
+                            img(src='/images/영주_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 영주
+                    | 				
+                    li
+                        a(href='/city/busan')
+                            img(src='/images/부산_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 부산
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/yosu')
+                            img(src='/images/여수_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 여수
+                    | 				
+                    li#upper
+                        a(href='/city/soonchun')
+                            img(src='/images/순천_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 순천
+                    | 				
+                    li#upper
+                        a(href='/city/bosung')
+                            img(src='/images/보성_b3.jpg')
+                            | 					
+                            span.photoText
+                                span 보성
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 영월 -> 영주 -> 부산 -> 여수 -> 순천 -> 보성
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 영월 : 동강사진박물관,청령포,장릉,선동
+                    | 		
+                    tr
+                        td 영주 : 부석사,소수서원,무섬마을
+                    | 		
+                    tr
+                        td 부산 : 해운대해수욕장,법기수원지,광안대교야경
+                    | 		
+                    tr
+                        td 여수 : 여수엑스포해양공원,거문도 등대
+                    | 		
+                    tr
+                        td 순천 : 순천만,순천만정원,선암사,공마당둘레길
+                    | 		
+                    tr
+                        td 보성 : 녹차밭,대한다원,공룡알화석지
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

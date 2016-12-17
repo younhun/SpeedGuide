@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Young
+                | 		
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/jungseon')
+                            img(src='/images/정선_y.jpg')
+                            | 					
+                            span.photoText
+                                span 정선
+                    | 				
+                    li
+                        a(href='/city/damyang')
+                            img(src='/images/담양_y.jpg')
+                            | 					
+                            span.photoText
+                                span 단양
+                    | 				
+                    li
+                        a(href='/city/jechun')
+                            img(src='/images/제천_y.jpg')
+                            | 					
+                            span.photoText
+                                span 제천
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/jenju')
+                            img(src='/images/전주_y.jpg')
+                            | 					
+                            span.photoText
+                                span 전주
+                    | 				
+                    li#upper
+                        a(href='/city/bosung')
+                            img(src='/images/보성_y.jpg')
+                            | 					
+                            span.photoText
+                                span 보성
+                    | 				
+                    li#upper
+                        a(href='/city/yosu')
+                            img(src='/images/여수_y.jpg')
+                            | 					
+                            span.photoText
+                                span 여수
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 정선 -> 단양 -> 제천 -> 전주 -> 보성 -> 여수 
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 정선 : 짚와이어
+                    | 		
+                    tr
+                        td 단양 : 패러글라이딩
+                    | 		
+                    tr
+                        td 제천 : 번지점프
+                    | 		
+                    tr
+                        td 전주 : 한옥마을 한복체험
+                    | 		
+                    tr
+                        td 보성 : 갯벌체험
+                    | 		
+                    tr
+                        td 여수 : 수상레저
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

@@ -1,0 +1,135 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 WestSea
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/goonsan')
+                            img(src='/images/군산_w.jpg')
+                            | 					
+                            span.photoText
+                                span 군산
+                    | 				
+                    li
+                        a(href='/city/teahn')
+                            img(src='/images/태안_w.jpg')
+                            | 					
+                            span.photoText
+                                span 태안
+                    | 				
+                    li
+                        a(href='/city/boleng')
+                            img(src='/images/보령_w.jpg')
+                            | 					
+                            span.photoText
+                                span 보령
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/booan')
+                            img(src='/images/부안_w.jpg')
+                            | 					
+                            span.photoText
+                                span 부안
+                    | 				
+                    li#upper
+                        a(href='/city/younggwang')
+                            img(src='/images/영광_w.jpg')
+                            | 					
+                            span.photoText
+                                span 영광
+                    | 				
+                    li#upper
+                        a(href='/city/mokpo')
+                            img(src='/images/목포_w.jpg')
+                            | 					
+                            span.photoText
+                                span 목포
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 군산 -> 태안 -> 보령 —> 부안 -> 영광 -> 목포 
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 군산 : 선유도 해수욕장
+                    | 		
+                    tr
+                        td 태안 : 천리포해수욕장
+                    | 		
+                    tr
+                        td 보령 : 대천해수욕장
+                    | 		
+                    tr
+                        td 부안 : 고사포해수욕장
+                    | 		
+                    tr
+                        td 영광 : 모래미해수욕장
+                    | 		
+                    tr
+                        td 목포 : 외달도해수욕장
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

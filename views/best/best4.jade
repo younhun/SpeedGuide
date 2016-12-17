@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Best No.4
+                | 			
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/choonchen')
+                            img(src='/images/춘천_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 춘천
+                    | 				
+                    li
+                        a(href='/city/gapyoung')
+                            img(src='/images/가평_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 가평
+                    | 				
+                    li
+                        a(href='/city/jechun')
+                            img(src='/images/제천_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 제천
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/danyang')
+                            img(src='/images/단양_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 단양
+                    | 				
+                    li#upper
+                        a(href='/city/donghe')
+                            img(src='/images/동해_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 동해
+                    | 				
+                    li#upper
+                        a(href='/city/gangleng')
+                            img(src='/images/강릉_b4.jpg')
+                            | 					
+                            span.photoText
+                                span 강릉
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 춘천 -> 가평 -> 제천 -> 단양 -> 동해 -> 강릉
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 춘천 : 소양강스카이워크, 김유정 문학촌, 청평사
+                    | 		
+                    tr
+                        td 가평 : 아침고요수목원, 사계절썰매장, 프랑스마을
+                    | 		
+                    tr
+                        td 제천 : 의림지, 충풍문화재단지, 금월봉
+                    | 		
+                    tr
+                        td 단양 : 도담상봉, 단양구경시장, 패러글라이딩
+                    | 		
+                    tr
+                        td 동해 : 묵호등대, 무릉계곡명승지, 논골담길
+                    | 		
+                    tr
+                        td 강릉 : 대관령하늘목장, 안목해변
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

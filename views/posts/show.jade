@@ -1,0 +1,15 @@
+extends ../layout
+block content
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+  .container
+    h1.page-header= post.title
+    p#postb
+      b by #{post.email}
+      | 
+      span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+      | 
+      | (조회수 #{post.read})
+    p.well(style='white-space:pre;')= post.content
+    
+    a.btn.btn-default(href='/posts/contact') 목록

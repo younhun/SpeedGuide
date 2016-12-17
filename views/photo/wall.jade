@@ -1,0 +1,135 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Paint
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/chunan')
+                            img(src='/images/천안_p.jpg')
+                            | 					
+                            span.photoText
+                                span 천안
+                    | 				
+                    li
+                        a(href='/city/chungju')
+                            img(src='/images/청주_p.jpg')
+                            | 					
+                            span.photoText
+                                span 청주
+                    | 				
+                    li
+                        a(href='/city/kimchun')
+                            img(src='/images/김천_p.jpg')
+                            | 					
+                            span.photoText
+                                span 김천
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/busan')
+                            img(src='/images/부산_p.jpg')
+                            | 					
+                            span.photoText
+                                span 부산
+                    | 				
+                    li#upper
+                        a(href='/city/yosu')
+                            img(src='/images/여수_p.jpg')
+                            | 					
+                            span.photoText
+                                span 여수
+                    | 				
+                    li#upper
+                        a(href='/city/gwangju')
+                            img(src='/images/광주_p.jpg')
+                            | 					
+                            span.photoText
+                                span 광주
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 천안 -> 청주 -> 김천 -> 부산 -> 여수 -> 광주
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 천안 : 미나릿길 벽화마을
+                    | 		
+                    tr
+                        td 청주 : 수암골
+                    | 		
+                    tr
+                        td 김천 : 자산동 벽화마을
+                    | 		
+                    tr
+                        td 부산 : 감천문화마을
+                    | 		
+                    tr
+                        td 여수 : 고소동 벽화마을
+                    | 		
+                    tr
+                        td 광주 : 광주 시화마을
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

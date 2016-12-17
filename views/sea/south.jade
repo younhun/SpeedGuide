@@ -1,0 +1,135 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 SouthSea
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/busan')
+                            img(src='/images/부산_south.jpg')
+                            | 					
+                            span.photoText
+                                span 부산
+                    | 				
+                    li
+                        a(href='/city/namhe')
+                            img(src='/images/남해_south.jpg')
+                            | 					
+                            span.photoText
+                                span 남해
+                    | 				
+                    li
+                        a(href='/city/gwangyang')
+                            img(src='/images/광양_south.jpg')
+                            | 					
+                            span.photoText
+                                span 광양
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/soonchun')
+                            img(src='/images/순천_south.jpg')
+                            | 					
+                            span.photoText
+                                span 순천
+                    | 				
+                    li#upper
+                        a(href='/city/yosu')
+                            img(src='/images/여수_south.jpg')
+                            | 					
+                            span.photoText
+                                span 여수
+                    | 				
+                    li#upper
+                        a(href='/city/bosung')
+                            img(src='/images/보성_south.jpg')
+                            | 					
+                            span.photoText
+                                span 보성
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 부산 -> 남해 -> 광양 -> 순천 -> 여수 -> 보성
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 부산 : 해운대 해수욕장
+                    | 		
+                    tr
+                        td 남해 : 상주해수욕장
+                    | 		
+                    tr
+                        td 광양 : 배알도해수욕장
+                    | 		
+                    tr
+                        td 순천 : 화포해변
+                    | 		
+                    tr
+                        td 여수 : 방죽포해수욕장
+                    | 		
+                    tr
+                        td 보성 : 율포해수욕장
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

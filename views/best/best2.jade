@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Best No.2
+                | 			
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/dejun')
+                            img(src='/images/대전_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 대전
+                    | 				
+                    li
+                        a(href='/city/goonsan')
+                            img(src='/images/군산_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 군산
+                    | 				
+                    li
+                        a(href='/city/jenju')
+                            img(src='/images/전주_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 전주
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/gwangju')
+                            img(src='/images/광주_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 광주
+                    | 				
+                    li#upper
+                        a(href='/city/busan')
+                            img(src='/images/부산_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 부산
+                    | 				
+                    li#upper
+                        a(href='/city/andong')
+                            img(src='/images/안동_b2.jpg')
+                            | 					
+                            span.photoText
+                                span 안동
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 대전 -> 군산 -> 전주 -> 광주 -> 부산 -> 안동 
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 대전 : 대동하늘공원, 장태산자연휴양림, 엑스포다리야경
+                    | 		
+                    tr
+                        td 군산 : 은파호수공원, 선유도, 군산짬뽕, 이성당
+                    | 		
+                    tr
+                        td 전주 : 오목대야경, 한옥마을, 막걸리골목
+                    | 		
+                    tr
+                        td 광주 : 무등산양떼목장, 펭귄마을, 대인야시장
+                    | 		
+                    tr
+                        td 부산 : 법기수원지, 해운대해수욕장, 광안대교야경
+                    | 		
+                    tr
+                        td 안동 : 병산서원, 월영교야경, 하회마을
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

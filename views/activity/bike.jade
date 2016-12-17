@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Bike
+                | 			
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/damyang')
+                            img(src='/images/담양_b.jpg')
+                            | 					
+                            span.photoText
+                                span 담양
+                    | 				
+                    li
+                        a(href='/city/namwon')
+                            img(src='/images/남원_b.jpg')
+                            | 					
+                            span.photoText
+                                span 남원
+                    | 				
+                    li
+                        a(href='/city/goksung')
+                            img(src='/images/곡성_b.jpg')
+                            | 					
+                            span.photoText
+                                span 곡성
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/yosu')
+                            img(src='/images/여수_b.jpg')
+                            | 					
+                            span.photoText
+                                span 여수
+                    | 				
+                    li#upper
+                        a(href='/city/changwon')
+                            img(src='/images/창원_b.jpg')
+                            | 					
+                            span.photoText
+                                span 창원
+                    | 				
+                    li#upper
+                        a(href='/city/gyoungju')
+                            img(src='/images/경주_b.jpg')
+                            | 					
+                            span.photoText
+                                span 경주
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 담양 -> 낙원 -> 곡성 -> 여수 -> 창원 -> 경주 
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 담양 : 관방제림 ~ 메타세콰이어길
+                    | 		
+                    tr
+                        td 남원 : 남원역 ~ 광한루
+                    | 		
+                    tr
+                        td 곡성 : 섬진강길
+                    | 		
+                    tr
+                        td 여수 : 오동도 ~ 여수바닷가
+                    | 		
+                    tr
+                        td 창원 : 진해 해변공원
+                    | 		
+                    tr
+                        td 경주 : 경주역 ~ 관광지 자전거
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide

@@ -1,0 +1,136 @@
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(type='text/css', rel='stylesheet', href='/stylesheets/style_c.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+    body
+        #wrapper
+            h1
+                a(href='/') Speed Travel Guide
+            // Begin Navigation Bar
+            #navWrapper
+                ul#nav
+                    li.item
+                        a(href='/food')  먹거리 여행 
+                    | 				
+                    li.item
+                        a(href='/sea')  바다 여행
+                    | 				
+                    li.item
+                        a(href='/photo')  사진 여행 
+                    | 				
+                    li.item
+                        a(href='/activity')  액티비티 여행 
+                    | 				
+                    li.item
+                        a(href='/best') Best 여행
+                    | 				
+                    li.item1
+                        a(href='/posts/contact')  문의 
+            // Begin main contact
+            #Content.content
+                h1 Camping
+                | 			
+                | 			
+                ul#expPhoto
+                    li
+                        a(href='/city/pochun')
+                            img(src='/images/포천_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 포천
+                    | 				
+                    li
+                        a(href='/city/gapyoung')
+                            img(src='/images/가평_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 가평
+                    | 				
+                    li
+                        a(href='/city/heseong')
+                            img(src='/images/횡성_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 횡성
+                    | 			
+                    | 				
+                    li#upper
+                        a(href='/city/donghe')
+                            img(src='/images/동해_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 동해
+                    | 				
+                    li#upper
+                        a(href='/city/gyoungju')
+                            img(src='/images/경주_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 경주
+                    | 				
+                    li#upper
+                        a(href='/city/teahn')
+                            img(src='/images/태안_camp.jpg')
+                            | 					
+                            span.photoText
+                                span 태안
+                | 			
+                #memo(onkeyup='resize(this)')
+                    h3 여행지 검색
+                    form(action ='/city/search', method ='POST')  
+                        .form-group
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                        button.btn.btn-primary(type='submit') 검색
+                | 			
+                table
+                    tr
+                        td#co
+                            | * 추천 코스 : 포천 -> 가평 -> 횡성 -> 동해 -> 경주 -> 태안 
+                            br
+                            br
+                    | 		
+                    tr
+                        td
+                    | 		
+                    tr
+                        td 포천 : 대회산캠핑장
+                    | 		
+                    tr
+                        td 가평 : 자라섬오토캠핑장
+                    | 		
+                    tr
+                        td 횡성 : 병지방 오토캠핑장
+                    | 		
+                    tr
+                        td 동해 : 망상오토캠핑장
+                    | 		
+                    tr
+                        td 경주 : 스카이글램핑
+                    | 		
+                    tr
+                        td 태안 : 곰섬오토캠핑장
+        // Begin footer
+        #footer
+            p
+                b
+                    | (주)명지대학교   /   제작자 김재한 정연훈 임윤정   /   대표번호 
+                    b
+                        | 010 5195 0890   / 문의사항 이메일 :  
+                        a(href='mailto:mju6013@naver.com') mju6013@nver.com
+                        |  카카오톡ID :  jem0890 
+                        br
+                        |  문의시간 :  월~금  11:00 ~ 17:00   /   © 2016 Speed Travel Guide
