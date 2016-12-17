@@ -765,13 +765,9 @@ router.post('/search', function(req, res, next){
         res.redirect('/city/younggwang');
     }else if(req.body.city == "영주"){
         res.redirect('/city/youngju');
-<<<<<<< HEAD
     }else if(req.body.city == "영월"){
-=======
-    }else if(req.body.city == "월"){
->>>>>>> ac02ca6695915f9b09ca68624203b6bf76dcbd63
         res.redirect('/city/youngwol');
-    }else {
+    }else{
         res.redirect('back');
     }
 });
