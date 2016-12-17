@@ -746,7 +746,7 @@ router.post('/search', function(req, res, next){
     }else if(req.body.city == "남원"){
         res.redirect('/city/namwon');
     }else if(req.body.city == '포천'){
-        res.redirect('/city/pohang');
+        res.redirect('/city/pochun');
     }else if(req.body.city == "포항"){
         res.redirect('/city/pohang');
     }else if(req.body.city == "순천"){
@@ -765,10 +765,9 @@ router.post('/search', function(req, res, next){
         res.redirect('/city/younggwang');
     }else if(req.body.city == "영주"){
         res.redirect('/city/youngju');
-    }else if(req.body.city == "열월"){
+    }else if(req.body.city == "영월"){
         res.redirect('/city/youngwol');
     }else {
-        req.flash('danger','해당 여행지가 없습니다.');
         res.redirect('back');
     }
 });
