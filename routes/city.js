@@ -4,11 +4,11 @@ var mysql = require('mysql');
 
 //mysql과 server 연동
 var connection = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    database: 'city',
-    password: 'yh0705',
-    port : '3000'
+    host: 'us-cdbr-iron-east-04.cleardb.net',
+    user: 'bdf2121feb62b6',
+    database: 'heroku_32aead25a481e34',
+    password: '9227772d',
+
 });
 
 connection.connect();
