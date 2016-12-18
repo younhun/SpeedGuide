@@ -6,6 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/chat', function(req, res, next){
+    res.render('chat');
+});
+
 //엑티비티 여행 클릭시
 router.get('/activity', function(req, res, next) {
   res.render('activity/activity');

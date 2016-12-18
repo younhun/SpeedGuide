@@ -10,11 +10,14 @@ var methodOverride = require('method-override');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
+//var http = require('http');
 //☆
 var routes = require('./routes/index');
 var city = require('./routes/city');
 var posts = require('./routes/posts');
 
+// var server = http.createServer(app);
+// var io = require('socket.io');(server);
 
 var app = express();
 
@@ -78,5 +81,28 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// io.on('connection', function(socket){
+//   socket.on('join', function(name) {
+//     socket.join(name);
+//     socket.handshake.name = name;
+//     io.emit('join', name);
+//   });
+
+//   socket.on('chat', function(data){
+//     var found = data.message.match(/^#([\S]+) (.+)/);
+//     if (found && found.length > 0) {
+//       return io.to(found[1]).emit('dm', {
+//         from: data.from,
+//         message: found[2]
+//       });
+//     }
+//     io.emit('chat', data);
+//   });
+
+//   socket.on('disconnect', function(){
+//     io.emit('left', socket.handshake.name);
+//   });
+// });
 
 module.exports = app;

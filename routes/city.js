@@ -49,6 +49,7 @@ handleDisconnect();
 
 
 
+
 //안동
 router.get('/andong',  function(req, res, next){
     var sql = 'SELECT *FROM andong_stay';
