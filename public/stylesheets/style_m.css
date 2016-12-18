@@ -62,3 +62,15 @@ form {
         display: none; }
     #messages li.direct {
       background: #f6ccff; }
+
+  @media screen and (max-device-width : 760px){
+  form input#name {
+    width: 20%;
+  }
+  form button{
+    width: 20%;
+  }
+  form input#m{
+    width: 95%;
+  }
+}
