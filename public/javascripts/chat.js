@@ -1,6 +1,7 @@
 //채팅기능을 위한 제이쿼리
 //web socket API가 있다. 이걸 이용하면 된다.
 //web socket은 TCP 기반의 양방향 통신 프로토콜
+//조원 정연훈이 하였습니다.
 $(function() {
   var template = _.template($('#template').html());
   var name = prompt('닉네임을 입력해주세요.');

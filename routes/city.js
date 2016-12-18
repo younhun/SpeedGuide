@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
+/*
+-데이터베이스(mySQL)를 연동 하는 부분
+-데이터베이스를 서버와 연동은 조원 정연훈이 하였습니다.
+-데이터베이스 설계 및 구축은 조원 임윤정이 하였습니다.
+*/
 
 //mysql과 헤로쿠 연동하는 부분
 var db_config = {

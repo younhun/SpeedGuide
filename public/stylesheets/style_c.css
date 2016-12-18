@@ -1,3 +1,10 @@
+/*
+-여행테마페이지의 UI구현 CSS
+-CSS를 통한 UI구현은 조원 김재한이 하였습니다.
+-이미지파일은 조원 임윤정이 제공.
+
+*/
+
 /*Body*/
 	body{
 		padding: 0;
@@ -102,7 +109,7 @@
 		
 	}
 
-	/* Memo */
+	/* 지역검색 */
 		#memo{
 		width: 10%;
 		height: 150px;
@@ -221,6 +228,7 @@
 	}
 	#co{font-size: 20px;}
 
+/*모바일가능*/
 @media screen and (max-device-width : 760px){
   	#wrapper{ 
 		min-width: 0px;

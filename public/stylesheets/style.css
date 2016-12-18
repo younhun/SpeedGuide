@@ -1,3 +1,9 @@
+/*
+-Main페이지와 여행주제페이지의 UI구현 CSS.
+-CSS를 통한 UI구현은 조원 김재한이 하였습니다.
+-이미지파일은 조원 임윤정이 제공.
+*/
+
 /*Body*/
 	body{
 		padding: 0;
@@ -106,19 +112,19 @@
 		float: left;
 	}
 	#index_memo li{
-		font-size: 1.5em;
+		font-size: 2em;
 		margin-bottom: 10px;
 		color: #3C8DC5;
 
 	}
 	#index_memo li a{
-		
+		font-size: 0.7em;
 		font-weight: bold;
 		color: #3C8DC5;
 		text-shadow: 1px 1px 1px gray;
 	}
 
-	/* Memo */
+	/* 지역검색 */
 	#index_memo{
 		width: 30%;
 		height: 450px;
@@ -352,6 +358,7 @@
 		color: black;
 	}
 
+/*모바일 사용가능*/
 @media screen and (max-device-width : 760px){
   	#wrapper{ 
 		min-width: 0px;

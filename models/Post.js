@@ -1,6 +1,11 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
+/*
+- 게시판 구현을 위한 mongoose의 스키마 생성
+- 조원 정연훈이 하였습니다. 
+*/
+
 //Schema(문의시 게시판을 위한 스키마)
 var schema = new Schema({
     //데이터 생성, require:변경시에 반드시 필요한 부분

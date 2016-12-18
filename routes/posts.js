@@ -2,6 +2,12 @@ var express = require('express'),
 Post = require('../models/Post');
 var router = express.Router();
 
+
+/*
+-데이터베이스(mongoose)를 서버와 연동 하는 부분과 게시판 control 부분
+-조원 정연훈이 하였습니다.
+*/
+
 //문의 클릭시 나오는 부분
 router.get('/contact', function(req, res, next) {
     var curPage = 1;
