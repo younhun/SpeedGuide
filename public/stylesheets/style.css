@@ -351,4 +351,45 @@
 	#footer a{
 		color: black;
 	}
-	
+
+@media screen and (max-device-width : 760px){
+  	#wrapper{ 
+		min-width: 0px;
+	}
+	#wrapper h1 a{ 
+	font-size: 25px;
+	}
+	li.item{
+		width: inherit;
+	}
+	.item1{
+		left: 10px;
+		top: 5px;
+	}
+	li.item1{
+		width: inherit;
+	}
+	#mainContent{
+		width: 100%;
+	}
+	#index_memo{
+		width: 100%;
+	}
+	#footer {
+		width: 100%;
+	}
+	#Content h1{
+		font-size: 28px;
+	}
+	#memo{
+		width: 20%;
+		right: 0px;
+	}
+	#memo h3{
+		font-size: 13px;
+	}
+	#expPhoto li{
+		left: 0;
+		width: 100%
+	}
+}

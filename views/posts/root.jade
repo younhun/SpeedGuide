@@ -9,6 +9,7 @@ html(lang='ko')
         | 	
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        script(type='text/javascript', src='/bower_components/jquery/dist/jquery.js')
         | 	
         link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
         | 	
@@ -65,7 +66,7 @@ html(lang='ko')
         $(".delete").click(function(e) {
           var id = $(e.currentTarget).data('id');
           if (confirm('정말 삭제하시겠습니까?')) {
-            $("#deleteForm").attr('action', "/posts/" + id + '/tomorrow/' + "?_method=DELETE").submit();          
+            $("#deleteForm").attr('action', "/posts/" + id + "/tomorrow/" + "?_method=DELETE").submit();          
           }
           return false;
         });

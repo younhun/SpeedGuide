@@ -2,7 +2,7 @@ var express = require('express'),
 Post = require('../models/Post');
 var router = express.Router();
 
-// 처음 접속했을시 나오는 부분
+//문의 클릭시 나오는 부분
 router.get('/contact', function(req, res, next) {
     var curPage = 1;
     if(req.param('page')){
@@ -57,15 +57,15 @@ router.get('/contact', function(req, res, next) {
                 }
             });
         });
-    }).limit(6).skip((curPage-1)*6).sort({date:-1});//3개씩 디비에서 꺼내고 skip을 통해 끌어올 document 구분지음
+    }).limit(6).skip((curPage-1)*6).sort({date:-1});//6개씩 디비에서 꺼내고 skip을 통해 끌어올 document 구분지음
 });
 
+//문의 페이지에서 관리자가 관리 할 수 있는 페이지를 불러오는 부분(URI주소창에끝에 /tomorrow 들어가면 나온다 => 관리자만 알 수 있게 설정가능 현재 임의로 팀이름으로 지정)
 router.get('/contact/tomorrow', function(req, res, next) {
     var curPage = 1;
     if(req.param('page')){
-        curPage = Number(req.param('page'));//정수로 형변환
-    }//몇페이지인지에 대한 파라메터가 있으면 값 받음.
-//db에서 날짜 순으로 게시글 리스트 가져와서 출력
+        curPage = Number(req.param('page'));
+    }
  Post.find({}, function(err, posts) {
    Post.count({}, function (err, count){
             if(err){
@@ -81,10 +81,10 @@ router.get('/contact/tomorrow', function(req, res, next) {
                     text: i, 
                     url: '/?page='+i
                 });
-            }//pages라는 배열에 pagination 갯수와 정보 담음
+            }
             if(curPage===1){
                 prevUrl = prevUrl + String(curPage);
-                nextUrl = nextUrl + String(curPage+1);//다시 문자열로 형변환하여 문자끼리 더해줌
+                nextUrl = nextUrl + String(curPage+1);
             } else if (curPage===totalPageNum){
                 prevUrl= prevUrl + String(curPage-1);
                 nextUrl = nextUrl + String(curPage);
@@ -115,7 +115,7 @@ router.get('/contact/tomorrow', function(req, res, next) {
                 }
             });
         });
-    }).limit(6).skip((curPage-1)*6).sort({date:-1});//3개씩 디비에서 꺼내고 skip을 통해 끌어올 document 구분지음
+    }).limit(6).skip((curPage-1)*6).sort({date:-1});
 });
 
 
@@ -213,17 +213,8 @@ router.put('/:id', function(req, res, next){
   });
 });
 
-//삭제 버튼 누를시 제거된다.
-router.delete("/:id", function(req, res, next){
-  Post.findOneAndRemove({_id:req.params.id},function(err){
-    if(err){
-      return next(err);
-    }
-    res.redirect('/posts/contact');
-  });
-});
 
-//삭제 버튼 누를시 제거된다.
+//삭제 버튼 누를시 제거된다. => 관리자 페이지에서 구현된다.
 router.delete("/:id/tomorrow", function(req, res, next){
   Post.findOneAndRemove({_id:req.params.id},function(err){
     if(err){

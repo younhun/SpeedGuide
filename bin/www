@@ -32,9 +32,8 @@ server.on('listening', onListening);
 
 // Socket.io 객체 생성.
 var io = require('socket.io')(server);
-// require('../app')(app, io);     // app.js 실행
-// require('../socket')(app, io);
 
+// socket.io를 위한 API 사용
 io.on('connection', function(socket){
   socket.on('join', function(name) {
     socket.join(name);

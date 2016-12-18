@@ -2,17 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-//mysql과 server 연동
-// var db_config = mysql.createConnection({
-//     host: 'us-cdbr-iron-east-04.cleardb.net',
-//     user: 'bdf2121feb62b6',
-//     database: 'heroku_32aead25a481e34',
-//     password: '9227772d'
 
-// });
-
-//db_config.connect();
-
+//mysql과 헤로쿠 연동하는 부분
 var db_config = {
     host: 'us-cdbr-iron-east-04.cleardb.net',
     user: 'bdf2121feb62b6',
@@ -21,26 +12,27 @@ var db_config = {
 
 };
 
-
 var connection;
 
+//mysql과 헤로쿠 연동할 때 서버 끊김 현상이 발생하게 된다.
+//서버 끊김 현상을 방지해주는 부분
 function handleDisconnect() {
-  connection = mysql.createConnection(db_config); // Recreate the connection, since
-                                                  // the old one cannot be reused.
+  connection = mysql.createConnection(db_config); 
+                                                
 
-  connection.connect(function(err) {              // The server is either down
-    if(err) {                                     // or restarting (takes a while sometimes).
+  connection.connect(function(err) {             
+    if(err) {                               
       console.log('error when connecting to db:', err);
-      setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
-    }                                     // to avoid a hot loop, and to allow our node script to
-  });                                     // process asynchronous requests in the meantime.
-                                          // If you're also serving http, display a 503 error.
+      setTimeout(handleDisconnect, 2000);
+    }                                  
+  });                                     
+                                          
   connection.on('error', function(err) {
     console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-      handleDisconnect();                         // lost due to either server restart, or a
-    } else {                                      // connnection idle timeout (the wait_timeout
-      throw err;                                  // server variable configures this)
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
+      handleDisconnect();                        
+    } else {                                     
+      throw err;                                 
     }
   });
 }
@@ -48,8 +40,13 @@ function handleDisconnect() {
 handleDisconnect();
 
 
+//1.mysql에서 하나의 스키마에 도시별 숙소, 관광지, 식당을 테이블로 만드는 방식
+//2.mysql에서 도시별로 스키마를 만들어 각 스키마에 관광지, 숙소, 식당을 테이블로 만드는 방식
 
+//위의 2가지가 있으며 어떤 방법을 이용하더라도 무관하다. 하지만 현재 프로젝트는 엄청 많은 정보가 있는 경우가 아니기 때문에 하나의 스키마를 이용하여 여러 테이블을 생성하였다.
+//여러 스키마를 만들면 코드가 더 복잡해지며 길어지기 때문에 2번쨰 방법을 선택
 
+//각각 테이블을 연동시킨다.
 //안동
 router.get('/andong',  function(req, res, next){
     var sql = 'SELECT *FROM andong_stay';
@@ -708,6 +705,7 @@ router.get('/youngwol',  function(req, res, next){
     });
 });
 
+//도시검색에서 해당도시 검색될시 해당 도시 관련 페이지로 넘겨주는 부분
 router.post('/search', function(req, res, next){
     if(req.body.city == "안동"){
         res.redirect('/city/andong');
@@ -807,6 +805,5 @@ router.post('/search', function(req, res, next){
         res.redirect('back');
     }
 });
-
 
 module.exports = router;

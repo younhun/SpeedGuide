@@ -10,17 +10,15 @@ var methodOverride = require('method-override');
 var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
-//var http = require('http');
-//☆
+
+//routes 부분 선언
 var routes = require('./routes/index');
 var city = require('./routes/city');
 var posts = require('./routes/posts');
 
-// var server = http.createServer(app);
-// var io = require('socket.io');(server);
-
 var app = express();
 
+//몽고디비 연결
 mongoose.connect('mongodb://younhun:yh0705@ds017736.mlab.com:17736/hun');
 mongoose.connection.on('error', console.log);
 
@@ -42,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
 app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
 
-//☆
+//routes 부분 사용
 app.use('/', routes);
 app.use('/city', city);
 app.use('/posts', posts);
@@ -82,27 +80,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// io.on('connection', function(socket){
-//   socket.on('join', function(name) {
-//     socket.join(name);
-//     socket.handshake.name = name;
-//     io.emit('join', name);
-//   });
-
-//   socket.on('chat', function(data){
-//     var found = data.message.match(/^#([\S]+) (.+)/);
-//     if (found && found.length > 0) {
-//       return io.to(found[1]).emit('dm', {
-//         from: data.from,
-//         message: found[2]
-//       });
-//     }
-//     io.emit('chat', data);
-//   });
-
-//   socket.on('disconnect', function(){
-//     io.emit('left', socket.handshake.name);
-//   });
-// });
 
 module.exports = app;

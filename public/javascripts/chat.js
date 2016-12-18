@@ -1,6 +1,9 @@
+//채팅기능을 위한 제이쿼리
+//web socket API가 있다. 이걸 이용하면 된다.
+//web socket은 TCP 기반의 양방향 통신 프로토콜
 $(function() {
   var template = _.template($('#template').html());
-  var name = prompt('닉네임을 입력해주세요. 영어/숫자로만');
+  var name = prompt('닉네임을 입력해주세요.');
   var socket = io({
     upgrade: false,
     transports: ['websocket']
@@ -32,6 +35,8 @@ $(function() {
     }
   });
 
+  //client -> server로 메세지를 전송한다.
+  //client에서 메세지 emit
   $('form').submit(function() {
     socket.emit('chat', {from: name, message: $('#m').val()});
     $('#m').val('').focus();

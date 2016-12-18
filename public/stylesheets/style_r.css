@@ -206,3 +206,62 @@
 		color: #2C1D30;
 		font-weight: bold;
 	}
+
+	@media screen and (max-device-width : 760px){
+  	#wrapper{ 
+		min-width: 100%;
+		margin-left: 80px;
+	}
+	#wrapper h1 a{ 
+	font-size: 23px;
+	float: right;
+	margin-top: 200px;
+	}
+	li.item{
+		width: 120%;
+	}
+	.item1{
+		left: 10px;
+		top: 5px;
+	}
+	li.item1{
+		width: inherit;
+	}
+	#mainContent{
+		width: 100%;
+	}
+	#index_memo{
+		width: 100%;
+	}
+	#footer {
+		width: 250%;
+		font-size: 15px;
+		height: 150px;
+		margin-left : 70px;
+	}
+	#Content h1{
+		font-size: 28px;
+	}
+	#navbar{
+		right: 300px;
+		width: 15%;
+
+	}
+	#expPhoto li{
+		left: 0;
+		width: 100%
+	}
+	.content{
+		height: 1200px;
+		width: 250%;
+
+	}
+	#co{
+		text-align: center;
+	}
+	#memo{
+		height: 180px;
+		width: 90%;
+		top: 0;
+	}
+}
