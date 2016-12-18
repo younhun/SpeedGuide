@@ -10,6 +10,8 @@ html(lang='ko')
         link(type='text/css', rel='stylesheet', href='/stylesheets/style.css')
         | 	
         link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        script(src='/bower_components/lodash/lodash.min.js')
+        script(src='/bower_components/jquery/dist/jquery.js')
         | 	
         script.
             function resize(obj) {
@@ -89,8 +91,10 @@ html(lang='ko')
                     h3 여행지 검색
                     form(action ='/city/search', method ='POST')  
                         .form-group
-                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')                       
+                            input(type='text', id='city', name = 'city', size=8, placeholder='도시명')
+                            ul.suggest-box                              
                         button.btn.btn-primary(type='submit') 검색
+                    script(src='/javascripts/search.js') 
         // Begin footer
         #footer
             p

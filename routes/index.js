@@ -1,6 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
+var _ = require('lodash');
+
+var countries = [
+'안동', '아산', '보령', '부안', '보성','부산','창원','춘천','천안','청주','청주','대구','담양','단양','대전','동해','강릉','가평','곡성','공주','군산','고성','구례','광주','광양','경주','하동','횡성','제천','전주','정선','김천','목포','문경','나주','남해','남원','포천','포항','순천','태안','울진','울산','양양','여수','양양','영주','영월'
+ ];
+
+
+router.get('/suggest', function(req, res, next) {
+  var city = req.query.city;
+    var ret = _.filter(countries, function(name) {
+    return name.toLowerCase().indexOf(city.toLowerCase()) > -1;
+     });
+  res.json(ret);
+});
+
+
 //메인으로 가는 버튼
 router.get('/', function(req, res, next) {
   res.render('index');
