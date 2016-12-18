@@ -11,6 +11,8 @@ var mysql = require('mysql');
 
 // });
 
+//db_config.connect();
+
 var db_config = {
     host: 'us-cdbr-iron-east-04.cleardb.net',
     user: 'bdf2121feb62b6',
@@ -19,7 +21,6 @@ var db_config = {
 
 };
 
-//db_config.connect();
 
 var connection;
 
