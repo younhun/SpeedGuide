@@ -11,7 +11,7 @@ a {
   color: #00B7FF; }
 
 form {
-  background: rgba(229,216,92,0.5);
+  background: rgba(211,213,192,0.3);
   padding: 3px;
   position: fixed;
   bottom: 0;
@@ -41,7 +41,7 @@ form {
   #messages li {
     padding: 0.5em 1em; }
     #messages li:nth-child(odd) {
-      background: #eee; }
+      background: rgba(199,205,150,0.5); }
     #messages li span {
       padding: 0.5em; }
     #messages li .name {
