@@ -6,11 +6,10 @@ block content
     input#name(type='text', readonly=true, placeholder='name')
     input#m(type='text', autocomplete='off', placeholder='type message')
     button Send
+    a.btn.btn-primary(href='/') 홈으로
   script#template(type='text/template').
     <li class='<%= type%>'>
       <span class='name'><%= from%></span>
       <span class='text'><%= message %></span>
       <div class='clearfix'></div>
     </li>
-  <li>
-    a(href='/') 메인

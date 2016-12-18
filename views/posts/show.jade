@@ -1,15 +1,31 @@
-extends ../layout
-block content
-  link(rel='stylesheet', href='/stylesheets/style.css')
-  link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
-  .container
-    h1.page-header= post.title
-    p#postb
-      b by #{post.email}
-      | 
-      span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
-      | 
-      | (조회수 #{post.read})
-    p.well(style='white-space:pre;')= post.content
-    
-    a.btn.btn-default(href='/posts/contact') 목록
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+  body
+    .container
+      h1.page-header= post.title
+      p#postb
+        b by #{post.email}
+        | 
+        span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
+        | 
+        | (조회수 #{post.read})
+      p.well(style='white-space:pre;')= post.content
+      
+      a.btn.btn-default(href='/posts/contact') 목록

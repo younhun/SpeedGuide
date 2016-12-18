@@ -1,27 +1,43 @@
-extends ../layout
-block content
-  link(rel='stylesheet', href='/stylesheets/style.css')
-  link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
-  .container
-    if post.id
-      h1.page-header#posth 글수정
-    else
-      h1.page-header#posth 글쓰기
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+  body
+    .container
+      if post.id
+        h1.page-header#posth 글수정
+      else
+        h1.page-header#posth 글쓰기
 
-    form(action = "/posts", method='POST')
-      .form-group
-        label#postb(for='email') Email address
-        input.form-control(type='email', id='email', name='email', placeholder='Email', value=post.email)
-        label#postb(for='password') Password
-        input.form-control(type='password', id='password', name='password', placeholder='Password')
-      .form-group
-        label#postb(for='title') Title
-        input.form-control(type='text', id='title', name='title', placeholder='title', value=post.title)
-      .form-group
-        label#postb(for='content') Content
-        textarea.form-control(id='content', rows='10', name='content', placeholder='content here')= post.content
+      form(action = "/posts", method='POST')
+        .form-group
+          label#postb(for='email') Email address
+          input.form-control(type='email', id='email', name='email', placeholder='Email', value=post.email)
+          label#postb(for='password') Password
+          input.form-control(type='password', id='password', name='password', placeholder='Password')
+        .form-group
+          label#postb(for='title') Title
+          input.form-control(type='text', id='title', name='title', placeholder='title', value=post.title)
+        .form-group
+          label#postb(for='content') Content
+          textarea.form-control(id='content', rows='10', name='content', placeholder='content here')= post.content
 
-      div.form-actions
-        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
-        | 
-        button.btn.btn-primary(type='submit') 완료
+        div.form-actions
+          a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+          | 
+          button.btn.btn-primary(type='submit') 완료

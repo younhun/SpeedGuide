@@ -1,50 +1,66 @@
-extends ../layout
-block content
-  link(rel='stylesheet', href='/stylesheets/style.css')
-  link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
-  .container
-    h1.page-header 문의
-    p#postb total #{pagination.numPosts} posts   
-    
-    table.table.table-bordered
-      thead#postb
-        tr
-          th 이메일
-          th 제목
-          th 날짜
-          th 조회수
-          th
-      tbody#postb
-        each post in posts
+doctype html
+html(lang='ko')
+    head
+        meta(charset='UTF-8')
+        | 	
+        title Speed Travel Guide
+        | 	
+        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+        | 	
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        | 	
+        link(href='http://fonts.googleapis.com/css?family=Courgette', rel='stylesheet', type='text/css')
+        | 	
+        script.
+            function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (20+obj.scrollHeight)+"px";
+            }
+  body
+    .container
+      h1.page-header 문의
+      p#postb total #{pagination.numPosts} posts   
+      
+      table.table.table-bordered
+        thead#postb
           tr
-            td= post.email
-            td
-              a(href='/posts/#{post.id}', style='color:white')= post.title
-            td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
-            td= post.read
-            td
-              a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
+            th 이메일
+            th 제목
+            th 날짜
+            th 조회수
+            th
+        tbody#postb
+          each post in posts
+            tr
+              td= post.email
+              td
+                a(href='/posts/#{post.id}', style='color:white')= post.title
+              td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
+              td= post.read
+              td
+                a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
 
-             
+              
 
 
-    a.btn.btn-primary(href='/posts/new') 글쓰기
-    a.btn.btn-primary(href='/') 홈으로
+      a.btn.btn-primary(href='/posts/new') 글쓰기
+      a.btn.btn-primary(href='/') 홈으로
 
-    nav.center
-      ul.pagination
-        li(class=pagination.firstPage.cls): a(href=pagination.firstPage.url)
-          span(aria-hidden="true") &laquo;
-        li(class=pagination.prevPage.cls): a(href=pagination.prevPage.url)
-          span(aria-hidden="true") &lt;
-        each page in pagination.pages
-          li(class=page.cls)
-            a(href=page.url): span= page.text
-        li(class=pagination.nextPage.cls): a(href=pagination.nextPage.url)
-          span(aria-hidden="true") &gt;
-        li(class=pagination.lastPage.cls): a(href=pagination.lastPage.url)
-          span(aria-hidden="true") &raquo;
+      nav.center
+        ul.pagination
+          li(class=pagination.firstPage.cls): a(href=pagination.firstPage.url)
+            span(aria-hidden="true") &laquo;
+          li(class=pagination.prevPage.cls): a(href=pagination.prevPage.url)
+            span(aria-hidden="true") &lt;
+          each page in pagination.pages
+            li(class=page.cls)
+              a(href=page.url): span= page.text
+          li(class=pagination.nextPage.cls): a(href=pagination.nextPage.url)
+            span(aria-hidden="true") &gt;
+          li(class=pagination.lastPage.cls): a(href=pagination.lastPage.url)
+            span(aria-hidden="true") &raquo;
 
-    form#deleteForm(style='display:none', method="POST")
-            
+      form#deleteForm(style='display:none', method="POST")
+              
 
