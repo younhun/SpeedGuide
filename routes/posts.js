@@ -189,7 +189,7 @@ router.post('/', function(req, res, next){
 });
 
 //게시글 수정을 위함이다.
-router.put('/:id', function(req, res, next){  
+router.put('/:id/edit', function(req, res, next){  
   Post.findById(req.params.id, function(err, post){
   //각 게시글의 아이디를 찾아간다.
   if(err) {
