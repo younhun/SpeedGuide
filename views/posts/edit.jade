@@ -27,7 +27,7 @@ html(lang='ko')
       else
         h1.page-header#posth 글쓰기
 
-      form(action = "/posts", method='POST')
+      form(action = (post.id) ? "/posts/#{post.id}?_method=PUT" : "/posts", method='POST')
         .form-group
           label#postb(for='email') Email address
           input.form-control(type='email', id='email', name='email', placeholder='Email', value=post.email)
